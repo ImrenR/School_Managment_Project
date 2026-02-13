@@ -2,10 +2,10 @@ public class Teacher extends Person {
 
 
     //Fields
-
     private int sicilNo;
     private String bolum;
 
+    //Constructor
     public Teacher(String nameSurname, int age, String id, int sicilNo, String bolum) {
         super(nameSurname, age, id);
         this.sicilNo = sicilNo;

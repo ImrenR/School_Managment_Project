@@ -2,7 +2,7 @@ public class Person { // POJO class
 
   private  String nameSurname;
     private  int age;
-    private   String id;
+    private  String id;
 
 
     public Person(String nameSurname, int age, String id) {
@@ -16,25 +16,13 @@ public class Person { // POJO class
         return nameSurname;
     }
 
-    public void setNameSurname(String nameSurname) {
-        this.nameSurname = nameSurname;
-    }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+
 
     @Override
     public String toString() {
