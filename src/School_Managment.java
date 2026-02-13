@@ -174,6 +174,7 @@ public class School_Managment {
     }
 
     private static void ekle() {
+        input.nextLine();
         System.out.println("***" + kisiTuru + " adding page ***");
 
         if (kisiTuru.equalsIgnoreCase("STUDENT")) {
@@ -202,6 +203,7 @@ public class School_Managment {
             islemMenu();
 
         } else {
+            input.nextLine();
             System.out.println("***" + kisiTuru + " adding menu ***");
             if (kisiTuru.equalsIgnoreCase("TEACHER")) {
                 System.out.println("Enter a name and surname for Teacherr:");
