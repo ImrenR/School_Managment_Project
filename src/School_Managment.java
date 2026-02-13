@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,41 +13,46 @@ public class School_Managment {
 
 
     static void islemMenu() {
-        System.out.println("The person you chosen : " + kisiTuru
-                + "\n ACTION MENU " +
-                "  \n CHOOSE A OPTION YOU WANT TO PROCEED ..." +
-                "  \n***********"
-                + kisiTuru + "ACTIONS" +
-                "  ********"
-                + "\n1-ADD " + kisiTuru +
-                " \n2-SEARCH" +
-                "\n3-LIST " +
-                "\n4-DELETE" +
-                "\n0-MAIN MENU");
 
-        int islemTercihi = input.nextInt();
+      try {
+          System.out.println(
+                  "\n ACTION MENU " +
+                          "  \n CHOOSE A OPTION YOU WANT TO PROCEED ..." +
+                          "  \n***********"
+                          + kisiTuru + "ACTIONS" +
+                          "  ********"
+                          + "\n1-ADD " + kisiTuru +
+                          " \n2-SEARCH" +
+                          "\n3-LIST " +
+                          "\n4-DELETE" +
+                          "\n0-MAIN MENU");
 
-        switch (islemTercihi) {
-            case 1:
-                ekle();
-                break;
-            case 2:
-                arama();
-                break;
-            case 3:
-                listele();
-                break;
-            case 4:
-                silme();
-                break;
-            case 0:
-                Actions.girisPaneli();
-                break;
-            default:
-                System.out.println("Please try again ..");
-                islemMenu();
-                break;
-        }
+          int islemTercihi = input.nextInt();
+
+          switch (islemTercihi) {
+              case 1:
+                  ekle();
+                  break;
+              case 2:
+                  arama();
+                  break;
+              case 3:
+                  listele();
+                  break;
+              case 4:
+                  silme();
+                  break;
+              case 0:
+                  Actions.girisPaneli();
+                  break;
+              default:
+                  System.out.println("Please try again ..");
+                  islemMenu();
+                  break;
+          }
+      }catch (InputMismatchException e){
+          System.out.println("Please try again, enter one of option(1-2-3-4-0) listed above");
+      }
     }
 
     private static void silme() {
@@ -101,11 +107,11 @@ public class School_Managment {
     }
 
     private static void listele() {
-        System.out.println("***" + kisiTuru +"list page ***");
+        System.out.println("***" + kisiTuru +" List Page ***");
 
         if(kisiTuru.equalsIgnoreCase("STUDENT")){
 
-            System.out.println(studentList);
+            System.out.println(studentList + " ");
             islemMenu();
 
         }else {
@@ -172,23 +178,22 @@ public class School_Managment {
 
         if (kisiTuru.equalsIgnoreCase("STUDENT")) {
             System.out.println("Enter a name and surname for Student :");
-            // String adSoyad = input.nextLine();
-            String adSyoad = new Scanner(System.in).nextLine(); // dumy
+            String adSyoad = input.nextLine();
 
             System.out.println("Enter a id for Student :");
             String kimlikNo = input.nextLine();
-            input.nextLine(); // dumy
+
 
             System.out.println("Enter an age for Student :");
-            int yas = input.nextInt();
+            int yas = Integer.parseInt(input.nextLine());
 
             System.out.println("Enter a student number for Student :");
             String ogrenciNo = input.nextLine();
-            input.next(); /// dumy
+
 
             System.out.println("Enter a class name for Student :");
             String classs = input.nextLine();
-            input.nextLine(); /// dumy
+
 
             Student studentObj = new Student(adSyoad, yas, kimlikNo, ogrenciNo, classs);
             studentList.add(studentObj);
@@ -200,19 +205,19 @@ public class School_Managment {
             System.out.println("***" + kisiTuru + " adding menu ***");
             if (kisiTuru.equalsIgnoreCase("TEACHER")) {
                 System.out.println("Enter a name and surname for Teacherr:");
-                // String adSoyad = input.nextLine();
-                String adSyoad = new Scanner(System.in).nextLine();
+
+                String adSyoad =input.nextLine();
 
                 System.out.println("Enter a id for Teacher :");
                 String kimlikNo = input.nextLine();
-                input.nextLine(); // dumy
+
 
                 System.out.println("Enter an age for Teacher :");
-                int yas = input.nextInt();
+                int yas =Integer.parseInt(input.nextLine());
 
                 System.out.println("Enter a sicil number for Teacher:");
-                int sicilNo = input.nextInt();
-                input.next(); /// dumy
+                int sicilNo = Integer.parseInt(input.nextLine());
+
 
                 System.out.println("Enter a section for Teacher :");
                 String bolum = input.nextLine();
