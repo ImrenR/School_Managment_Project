@@ -56,35 +56,32 @@ public class School_Managment {
     }
 
     private static void silme() {
+        input.nextLine();
+
         System.out.println("***" + kisiTuru + "erase page***");
 
         if (kisiTuru.equalsIgnoreCase("STUDENT")) {
             System.out.println("Enter an id for Student you want to delete = ");
-
             String silinecekId = input.nextLine();
             for (Student avuc : studentList) {
                 if (avuc.getId().equalsIgnoreCase(silinecekId)) {
                     System.out.println("The student = " + avuc.getNameSurname() + "has been deleted from the list");
                     studentList.remove(avuc);
                     break;
+
                 } else {
                     System.out.println("The student you are trying to delete not found in the list! Please try again..");
                     silme();
                 }
             }
 
-        } else {
-            System.out.println("Something went wrong! You are directing to the action page");
-
-        }
-
-        if (kisiTuru.equalsIgnoreCase("TEACHER")) {
-            System.out.println("Enter an id for teacheryou want to delete =");
+        } else{
+            System.out.println("Enter an id for teacher you want to delete =");
 
             String silinenId = input.nextLine();
             for (Teacher avuc : teacherList) {
                 if (avuc.getId().equalsIgnoreCase(silinenId)) {
-                    System.out.println("The teacher = " + avuc.getNameSurname() + "has been deleted from the list");
+                    System.out.println("The teacher = " + avuc.getNameSurname() + "  has been deleted from the list");
                     teacherList.remove(avuc);
                     break;
                 } else {
@@ -96,11 +93,9 @@ public class School_Managment {
 
 
         }
-        else {
-            System.out.println("Something went wrong! You are directing to the action page");
-            arama();
 
-        }
+
+
         islemMenu();
 
 
@@ -122,7 +117,7 @@ public class School_Managment {
     }
 
     private static void arama() {
-
+input.nextLine();
         System.out.println("***" + kisiTuru + " searching page***");
 
         if (kisiTuru.equalsIgnoreCase("STUDENT")) {
@@ -132,7 +127,7 @@ public class School_Managment {
 
             for (Student avuc : studentList) { // Search this id in Student obj which we stored in studentlist. we called each id as AVUC
                 if (avuc.getId().equalsIgnoreCase(searchedId)) {
-                    System.out.println("The student you are searching for in the list !" + avuc.getNameSurname());
+                    System.out.println("The student you are searching for in the list = ! " + avuc.getNameSurname());
                     break; // when you find it break the loop
 
                 } else {
@@ -143,16 +138,13 @@ public class School_Managment {
 
         } // end of if statement
         else {
-            System.out.println("Something went went wrong please try again");
-        }
-
-        if (kisiTuru.equalsIgnoreCase("TEACHER")) {
+            input.nextLine();
             System.out.println("Enter id no of Teacher = ");
 
             String arananId = input.nextLine();
             for (Teacher avuc : teacherList) {
                 if (avuc.getId().equalsIgnoreCase(arananId)) {
-                    System.out.println("The teacher you are searching for has been found in the List" + avuc.getNameSurname());
+                    System.out.println("The teacher you are searching for has been found in the List = " + avuc.getNameSurname());
                     break;
                 } else {
 
@@ -161,13 +153,8 @@ public class School_Managment {
                 }
             }
 
-
         }
-        else {
-            System.out.println("Something went went wrong please try again");
 
-
-        }
 
         islemMenu();
 
@@ -176,7 +163,6 @@ public class School_Managment {
     private static void ekle() {
         input.nextLine();
         System.out.println("***" + kisiTuru + " adding page ***");
-
         if (kisiTuru.equalsIgnoreCase("STUDENT")) {
             System.out.println("Enter a name and surname for Student :");
             String adSyoad = input.nextLine();
@@ -206,8 +192,7 @@ public class School_Managment {
             input.nextLine();
             System.out.println("***" + kisiTuru + " adding menu ***");
             if (kisiTuru.equalsIgnoreCase("TEACHER")) {
-                System.out.println("Enter a name and surname for Teacherr:");
-
+                System.out.println("Enter a name and surname for Teacher:");
                 String adSyoad =input.nextLine();
 
                 System.out.println("Enter a id for Teacher :");
